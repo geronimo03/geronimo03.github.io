@@ -1,21 +1,829 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Eunsoo Cho's speech research portfolio. Korean speech recognition, domain adaptation, and research directions in audio deepfake detection."><title>Eunsoo Cho · Speech research</title>
-<style>
-:root{--ink:#182c30;--muted:#4d6264;--line:#c8d4d1;--paper:#f8faf7;--accent:#08655c;--serif:Georgia,'Times New Roman',serif}*{box-sizing:border-box}html{scroll-padding-top:2rem}body{margin:0;color:var(--ink);background:var(--paper);font:1.05rem/1.65 'Inter',system-ui,sans-serif}a{color:var(--accent);text-underline-offset:.22em}a:hover{text-decoration:underline}a:focus-visible,summary:focus-visible{outline:3px solid #de8427;outline-offset:4px}.wrap{max-width:1190px;margin:auto;padding-inline:clamp(1.25rem,5vw,4rem)}header{border-bottom:1px solid var(--line)}header .wrap,nav,.actions{display:flex;align-items:center;flex-wrap:wrap;gap:1.2rem}header .wrap{min-height:4.5rem;justify-content:space-between;padding-block:.7rem}nav a,.brand{color:var(--ink);text-decoration:none}.brand{font: bold 1.25rem var(--serif)}nav{font-size:.94rem}.hero,.split{display:grid;grid-template-columns:1.12fr 1fr;gap:clamp(2rem,6vw,5rem);align-items:center}.hero{padding-block:clamp(3rem,7vw,6rem)}h1,h2,h3,p{margin:0}h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.13}h1{font-size:clamp(3.7rem,7vw,6.5rem);letter-spacing:-.065em}h2{font-size:clamp(2.2rem,4vw,3.3rem);letter-spacing:-.045em}h3{font-size:1.65rem;letter-spacing:-.025em}.korean{font-size:1.25rem;color:var(--muted);margin:.4rem 0 1.3rem}.label{font:600 .81rem/1.5 'IBM Plex Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:.8rem}.intro{font-size:1.15rem;max-width:48ch}.actions{margin-top:1.5rem}.button{background:var(--accent);color:white;text-decoration:none;padding:.55rem 1rem;border-radius:4px}.panel{background:#173937;color:#f6faf7;padding:clamp(1.4rem,3vw,2.4rem);border-radius:6px;margin:0}.panel .label{color:#a9d5c6}.panel h2{font-size:2rem}.panel small{display:block;color:#cfdfd9}.row{margin-top:1rem}.values{display:flex;justify-content:space-between;gap:.75rem;font-size:.92rem}.values strong{white-space:nowrap}.track{margin-top:.3rem;background:repeating-linear-gradient(to right,#426561 0 1px,transparent 1px 25%);padding:3px 0}.bar{height:5px;margin:3px 0;background:#9cb4b0;width:var(--w)}.bar.after{background:#96e7bc}.key{display:flex;gap:1rem;flex-wrap:wrap;font-size:.85rem;margin-top:1rem}.key span:before{content:'';display:inline-block;width:.8rem;height:.4rem;background:#9cb4b0;margin-right:.4rem}.key span+span:before{background:#96e7bc}section.block{border-top:1px solid var(--line);padding-block:clamp(2.4rem,5vw,4.25rem)}.split{grid-template-columns:.8fr 1.6fr;align-items:start}.entries article+article,.papers li+li{border-top:1px solid var(--line);padding-top:1.3rem;margin-top:1.3rem}article p,.papers small{display:block;margin-top:.55rem;color:var(--muted)}.papers{list-style:none;margin:0;padding:0}.papers li{font-size:1.05rem}.papers small{font-size:.92rem}.papers cite{font-style:normal;font-weight:650}details{margin-top:1.1rem}summary{cursor:pointer;color:var(--accent);font-weight:600}footer{border-top:1px solid var(--line);padding:1.8rem 0}footer .wrap{display:flex;gap:1rem;justify-content:space-between;flex-wrap:wrap}.skip{position:absolute;left:-9999px}.skip:focus{left:1rem;top:1rem;background:white;padding:.6rem;z-index:1}@media(max-width:800px){.hero,.split{grid-template-columns:1fr;gap:1.6rem}nav{gap:.8rem}.hero{padding-top:2.8rem}}@media print{header,footer,.actions,.skip{display:none}.hero,.split{display:block}.panel{margin:1rem 0;background:white;color:black;border:1px solid gray}.panel .label,.panel small{color:black}.track,.key{display:none}section.block,.hero{padding:1rem 0}article,figure,li{break-inside:avoid}h2{margin-bottom:1rem}}
-</style></head><body id="top"><a class="skip" href="#main">Skip to content</a><header><div class="wrap"><a class="brand" href="#top">Eunsoo Cho</a><nav aria-label="Main navigation"><a href="#research">Research</a><a href="#publications">Publications</a><a href="#background">Background</a><a href="mailto:christiefan03@gmail.com">Email</a></nav></div></header>
-<main id="main" class="wrap"><div class="hero"><div><p class="label">Speech AI researcher · Seoul</p><h1>Eunsoo Cho</h1><p class="korean" lang="ko">조은수</p><p class="intro">I study how speech recognizers behave when the speaker, vocabulary, or recording channel changes. At Selvas AI, I work on Korean, English, and Mandarin speech. I’m pursuing doctoral research on how those same shifts affect audio deepfake detectors.</p><div class="actions"><a class="button" href="#research">Explore my research</a><a href="mailto:christiefan03@gmail.com">Get in touch</a></div></div>
-<figure class="panel"><figcaption><p class="label">Master’s thesis · Korean ASR</p><h2>When a grammar helps</h2><small>Character error rate before and after grammar fusion. Lower is better.</small></figcaption>
-<div class="row"><div class="values"><span>Zeroth Korean</span><strong>4.95% → 0.66%</strong></div><div class="track" aria-hidden="true"><div class="bar" style="--w:24.75%"></div><div class="bar after" style="--w:3.3%"></div></div></div>
-<div class="row"><div class="values"><span>Loanword speech</span><strong>7.31% → 1.28%</strong></div><div class="track" aria-hidden="true"><div class="bar" style="--w:36.55%"></div><div class="bar after" style="--w:6.4%"></div></div></div>
-<div class="row"><div class="values"><span>Spontaneous speech</span><strong>11.06% → 16.16%</strong></div><div class="track" aria-hidden="true"><div class="bar" style="--w:55.3%"></div><div class="bar after" style="--w:80.8%"></div></div></div><div class="key"><span>Baseline</span><span>With grammar</span></div></figure></div>
-<section id="research" class="block split"><div><p class="label">Research</p><h2>Selected work</h2></div><div class="entries">
-<article><h3>Constraining a Korean CTC decoder</h3><p>For my master’s thesis, I combined token, lexicon, and grammar transducers into one search graph for pretrained Citrinet and Conformer models. The grammar reduced errors on loanwords but increased errors on spontaneous speech outside its vocabulary. Whether to use it depended on what speakers were free to say.</p></article>
-<article><h3>Recognizing speech across channels</h3><p>At Selvas AI, I adapted speech recognizers to 8 kHz telephone and radio recordings. I compared gains on the target channel with changes on held-out general speech, then examined errors by dialect and noise condition before selecting a model.</p></article>
-<article><h3>Synthetic speech for ASR training</h3><p>I generated more than 4,000 hours of training speech from text for command recognition and other ASR tasks. To evaluate whether the synthetic examples helped, I tracked recognition accuracy on the target vocabulary and regressions on general speech.</p></article>
-<article><h3>Measuring atypical speech</h3><p>At Sogang, I annotated therapist–patient recordings and used phoneme recognition to estimate clinical speech measures. The estimates correlated with human ratings at 0.94–0.97. Predicting a patient’s severity stage was a separate, harder task, with 74.85% accuracy.</p></article></div></section>
-<section class="block split"><div><p class="label">Proposed doctoral research</p><h2>Audio deepfake detection</h2></div><article><h3>Does a telephone channel make genuine speech look synthetic?</h3><p>I want to pass the same genuine and synthesized utterances through matched telephone conditions, then measure how often a detector changes its decision. At a threshold fixed on development data, I would report false alarms on genuine speakers and missed detections on unseen generators, broken down by language and channel. Paired recordings would let me isolate the effect of transmission from differences in what was said.</p></article></section>
-<section id="publications" class="block split"><div><p class="label">Publications</p><h2>Selected papers</h2><p><a href="https://scholar.google.com/citations?user=f7L3rT4AAAAJ&amp;hl=ko">Google Scholar profile</a></p></div><ul class="papers">
-<li><cite><a href="https://doi.org/10.3837/tiis.2024.06.015">Integration of WFST Language Model in Pre-trained Korean E2E ASR Model</a></cite><small>Junseok Oh, <b>Eunsoo Cho</b>, and Ji-Hwan Kim<br>KSII Transactions on Internet and Information Systems · 2024</small></li>
-<li><cite><a href="https://apicist.org/media?key=site%2Fapicist2023%2FProceedings_of_APIC-IST_2023.pdf">The Use of Grammar Transducer in Korean End-to-end Automatic Speech Recognition Models</a></cite><small><b>Eunsoo Cho</b>, Hosung Park, Hayoung Kim, and Ji-Hwan Kim<br>APIC-IST · 2023 · Proceedings PDF, pp. 193–195</small></li>
-<li><cite>Measuring Dysarthria Severity Using End-to-End Speech Recognition</cite><small><b>Eunsoo Cho</b> and Ji-Hwan Kim<br><a href="https://conference.cde.or.kr/">Society for Computational Design and Engineering Winter Conference</a> · 2023 · Title translated from Korean</small></li></ul></section>
-<section id="background" class="block split"><div><p class="label">Background</p><h2>Experience &amp; education</h2></div><div class="entries"><article><p class="label">2023–present</p><h3>AI Researcher · Selvas AI</h3><p>Speech Recognition Lab, Seoul. Domain adaptation, pronunciation assessment, multilingual ASR, and voice activity detection.</p></article><article><p class="label">2021–2023</p><h3>M.S. · Sogang University</h3><p>Applied Data Science and Engineering, Auditory Intelligence Lab. Advised by Prof. Ji-Hwan Kim.</p></article><article><p class="label">2016–2021</p><h3>Bachelor’s degree · Sogang University</h3><p>Chinese Culture, Art and Technology, and Convergence Software. Visiting student at Tsinghua University in 2017.</p></article><details><summary>Teaching and recognition</summary><p>Graduate teaching assistant at Sogang University (2021–2022). Taught WFST and Kaldi labs in industry training courses (2021).</p><p>Top Excellence Award, Korean AI Competition, Track 2 (2022). BK Government-Sponsored Scholarship (2021–2022).</p></details></div></section></main><footer><div class="wrap"><span>Eunsoo Cho · 조은수</span><a href="mailto:christiefan03@gmail.com">christiefan03@gmail.com</a><a href="#top">Back to top</a></div></footer></body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eunsoo Cho, speech AI researcher</title>
+<meta name="description" content="Eunsoo Cho builds speech recognition for phone lines, radio, noise, and non-native and atypical speakers, and is applying to PhD programs for Fall 2027 to work on audio deepfake detection.">
+<meta name="author" content="Eunsoo Cho">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Eunsoo Cho, speech AI researcher">
+<meta property="og:description" content="Speech recognition for phone lines, radio, noise, and non-native and atypical speakers. Applying to PhD programs for Fall 2027 in audio deepfake detection.">
+<meta name="theme-color" content="#ffffff">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.png" type="image/png" sizes="64x64">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/text-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/ui-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/site.css">
+<script defer src="assets/js/voice.js"></script>
+<script defer src="assets/js/charts.js"></script>
+<script defer src="assets/js/site.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="wordmark" href="#top">Eunsoo Cho</a>
+    <nav class="topnav" aria-label="Sections">
+      <a href="#plan">Research plan</a>
+      <a href="#industry">Industry work</a>
+      <a href="#graduate">Graduate work</a>
+      <a href="#publications">Publications</a>
+      <a href="#background">Background</a>
+    </nav>
+    <a class="cv-link" href="assets/Eunsoo_Cho_CV.pdf">CV <span class="cv-link-format">PDF</span></a>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero wrap" id="top" aria-labelledby="name">
+  <div class="hero-text">
+    <h1 id="name">Eunsoo Cho</h1>
+    <p class="pron"><span class="ko-serif" lang="ko">조은수</span> <span class="ipa" title="IPA pronunciation of 조은수">[tɕo.ɯn.su]</span></p>
+    <p class="lede">I build speech recognition for the conditions where it breaks: telephone and radio channels, noise, and non-native and atypical speakers, in Korean, English, and Mandarin. I am applying to PhD programs for Fall 2027 to work on audio deepfake detection under those same conditions.</p>
+    <p class="hero-meta">AI Researcher at Selvas AI in Seoul since 2023. M.S. from the Auditory Intelligence Lab at Sogang University.</p>
+    <ul class="actions" role="list">
+      <li><a class="button button-solid" href="assets/Eunsoo_Cho_CV.pdf">Download CV</a></li>
+      <li><a class="button" href="mailto:christiefan03@gmail.com">christiefan03@gmail.com</a></li>
+      <li><a class="button" href="https://scholar.google.com/citations?user=f7L3rT4AAAAJ&amp;hl=en">Google Scholar</a></li>
+    </ul>
+  </div>
+
+  <figure class="sonagram" data-sonagram aria-labelledby="sonagram-title">
+    <div class="sonagram-head">
+      <h2 class="sonagram-title" id="sonagram-title">What a phone line removes</h2>
+      <div class="sonagram-controls" data-enhanced hidden>
+        <div class="segmented" role="group" aria-label="Channel">
+          <button type="button" data-channel="studio" aria-pressed="true">Studio, 16&nbsp;kHz</button>
+          <button type="button" data-channel="phone" aria-pressed="false">Phone line, 8&nbsp;kHz</button>
+        </div>
+        <button type="button" class="play" data-play aria-label="Play the studio version"><span class="play-icon" aria-hidden="true"></span><span data-play-label>Play</span></button>
+      </div>
+    </div>
+    <div class="sonagram-plot">
+      <div class="sonagram-yaxis" aria-hidden="true">
+        <span style="--f:1">8&nbsp;kHz</span><span style="--f:.75">6</span><span style="--f:.5">4</span><span style="--f:.25">2</span><span style="--f:0">0</span>
+      </div>
+      <div class="sonagram-canvas-wrap">
+        <canvas class="sonagram-canvas" data-canvas role="img" aria-label="Spectrogram of the synthesized name 조은수 at studio bandwidth, 0 to 8&nbsp;kHz."></canvas>
+        <p class="sonagram-noscript" data-noscript>The spectrogram and audio are generated by JavaScript in your browser. Turn JavaScript on to see and hear them.</p>
+      </div>
+      <div class="sonagram-segments" aria-hidden="true">
+        <span class="ipa" style="--t:.109">tɕ</span><span class="ipa" style="--t:.230">o</span><span class="ipa" style="--t:.418">ɯ</span><span class="ipa" style="--t:.536">n</span><span class="ipa" style="--t:.627">s</span><span class="ipa" style="--t:.800">u</span>
+      </div>
+    </div>
+    <figcaption class="sonagram-caption">
+      <p>Synthetic speech of the crudest kind: a formant synthesizer, running in your browser, saying my name. Switch to the phone line and everything outside 300 to 3,400&nbsp;Hz is gone, including most of the hiss of [tɕ] and [s]. A deepfake detector that relies on cues in those bands loses them in exactly the same way. Which cues survive the call is the question I want to work on.</p>
+    </figcaption>
+  </figure>
+</section>
+
+<section class="section wrap" id="plan" aria-labelledby="plan-title">
+  <h2 id="plan-title">Research plan</h2>
+  <div class="prose">
+    <p>Three years of building recognizers for 8&nbsp;kHz calls, radio, and noise taught me how much a channel changes speech. Fraud with synthetic voices happens over the phone. In a PhD, I want to study how audio deepfake detectors behave on that kind of speech, with three questions.</p>
+  </div>
+  <ol class="questions" role="list">
+    <li>
+      <h3>Does the channel fool the detector?</h3>
+      <p>Pass the same genuine and synthetic utterances through telephone and radio channels, fix the decision threshold, and count the two errors separately: genuine speech flagged as fake, and fakes that get through.</p>
+    </li>
+    <li>
+      <h3>What about generators it has never seen?</h3>
+      <p>Break missed detections down by generator family, instead of reporting one pooled error rate that hides which systems get through.</p>
+    </li>
+    <li>
+      <h3>Does it hold up in Korean?</h3>
+      <p>Korean speech over Korean phone networks, against Korean-language voice synthesis, as one concrete non-English case where the detector's training data and the real calls differ.</p>
+    </li>
+  </ol>
+  <div class="prose">
+    <h3 class="h-sub">What I bring to it</h3>
+    <ul class="bring">
+      <li>Production ASR for 8&nbsp;kHz calls and radio, including an 11,000-hour training set I rebuilt from undocumented legacy data.</li>
+      <li>About 4,180 hours of TTS training speech that I generated and augmented for three domain-adaptation projects.</li>
+      <li>A habit of reporting what each gain costs: general-domain regressions, and closed-set versus open-set gaps.</li>
+      <li>Korean (native), English (fluent), and Mandarin Chinese (conversational).</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section wrap" id="industry" aria-labelledby="industry-title">
+  <div class="section-head">
+    <h2 id="industry-title">Industry work</h2>
+    <p class="section-sub">AI Researcher, Speech Recognition Lab, Selvas AI, Seoul, 2023 to present. Selvas AI is a Korean speech AI company with commercial speech-to-text and text-to-speech products.</p>
+  </div>
+
+  <figure class="ledger" data-ledger aria-labelledby="ledger-title">
+    <div class="figure-head">
+      <h3 id="ledger-title">Each gain, next to what it cost on general speech</h3>
+      <p class="figure-note">Accuracy is 1 − CER (syllable-level for Korean) unless noted. Gains and costs are in percentage points (pp). General speech is the held-out base test set. Select a row to open its project.</p>
+      <ul class="legend" role="list" data-enhanced hidden>
+        <li><span class="swatch swatch-gain" aria-hidden="true"></span>Gain on the target domain</li>
+        <li><span class="swatch swatch-loss" aria-hidden="true"></span>Change on general speech</li>
+      </ul>
+    </div>
+    <div class="ledger-chart" data-ledger-chart></div>
+    <details class="table-view">
+      <summary>Show these numbers as a table</summary>
+      <div class="table-scroll">
+      <table class="data" data-ledger-table>
+        <caption>Target-domain gain and general-speech change per test condition, in percentage points</caption>
+        <thead><tr><th scope="col">Project</th><th scope="col">Test condition</th><th scope="col" class="num">Gain (pp)</th><th scope="col" class="num">General speech (pp)</th></tr></thead>
+        <tbody>
+          <tr data-target="p-radio" data-gain="19.21" data-general="-0.06" data-detail="Emergency network 72.34% → 91.55%. General speech 91.02% → 90.96%."><th scope="row">Radio and emergency-call ASR</th><td>Emergency network</td><td class="num">+19.21</td><td class="num">−0.06</td></tr>
+          <tr data-target="p-radio" data-gain="6.74" data-general="-0.06" data-detail="Radio test sets, averaged. General speech 91.02% → 90.96%."><th scope="row">Radio and emergency-call ASR</th><td>Radio</td><td class="num">+6.74</td><td class="num">−0.06</td></tr>
+          <tr data-target="p-l2korean" data-gain="9.98" data-general="-2.27" data-detail="Syllable model, read speech: 88.10% → 98.08%."><th scope="row">Korean ASR for non-native speakers</th><td>Syllable model, read speech</td><td class="num">+9.98</td><td class="num">−2.27</td></tr>
+          <tr data-target="p-l2korean" data-gain="7.73" data-general="-0.24" data-detail="Phoneme model, read speech: 88.15% → 95.88%."><th scope="row">Korean ASR for non-native speakers</th><td>Phoneme model, read speech</td><td class="num">+7.73</td><td class="num">−0.24</td></tr>
+          <tr data-target="p-l2korean" data-gain="2.57" data-general="-2.27" data-detail="Syllable model, spontaneous speech: 90.62% → 93.19%."><th scope="row">Korean ASR for non-native speakers</th><td>Syllable model, spontaneous</td><td class="num">+2.57</td><td class="num">−2.27</td></tr>
+          <tr data-target="p-l2korean" data-gain="2.12" data-general="-0.24" data-detail="Phoneme model, spontaneous speech: 90.02% → 92.14%."><th scope="row">Korean ASR for non-native speakers</th><td>Phoneme model, spontaneous</td><td class="num">+2.12</td><td class="num">−0.24</td></tr>
+          <tr data-target="p-english" data-gain="7.25" data-general="0" data-detail="Average phoneme accuracy on learner sets 83.17% → 90.42%. Native speech held at 98.50%."><th scope="row">English pronunciation assessment</th><td>Korean learners (general = native speech)</td><td class="num">+7.25</td><td class="num">0.00</td></tr>
+          <tr data-target="p-kiosk" data-gain="4.07" data-general="-1.19" data-detail="To about 98% domain accuracy, from TTS alone."><th scope="row">Bank kiosk</th><td>Kiosk utterances</td><td class="num">+4.07</td><td class="num">−1.19</td></tr>
+          <tr data-target="p-callcenter" data-gain="0.87" data-general="-1" data-approx="true" data-detail="To about 94% domain accuracy. The general-speech regression is approximate, about 1&nbsp;pp."><th scope="row">Government call-center ASR</th><td>Real 8&nbsp;kHz calls</td><td class="num">+0.87</td><td class="num">≈ −1</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </details>
+  </figure>
+
+  <div class="theme">
+    <div class="theme-head">
+      <h3>Telephone and radio channels (8&nbsp;kHz)</h3>
+      <p class="theme-years">2024–2026</p>
+    </div>
+    <div class="entries">
+      <details class="entry" id="p-radio">
+        <summary>
+          <span class="entry-year">2026</span>
+          <span class="entry-main"><span class="entry-title">Radio and emergency-call ASR</span><span class="entry-result">+19.21&nbsp;pp on emergency-network speech and +6.74&nbsp;pp on radio, for a 0.06&nbsp;pp cost on general speech.</span></span>
+        </summary>
+        <dl class="entry-body">
+          <dt>Problem</dt><dd>Years of domain training data had been handed over with no record of what was in it, and the base model fell apart on radio and emergency-network speech: 50.15% accuracy on the newest test set.</dd>
+          <dt>Approach</dt><dd>Rebuilt an 11,000-hour training set from the undocumented legacy data: emergency calls, spoken numbers, TTS-generated domain abbreviations, and emergency-network speech, including training data I recovered after it had gone missing. Upsampled the 8&nbsp;kHz audio to 16&nbsp;kHz, trained four candidate models, and chose an average of the five best checkpoints.</dd>
+          <dt>Result</dt><dd>Emergency network 72.34% → 91.55% (+19.21&nbsp;pp). Radio +6.74&nbsp;pp on average, and +38.93&nbsp;pp on the newest test set. General speech 91.02% → 90.96% (−0.06&nbsp;pp).</dd>
+        </dl>
+      </details>
+      <details class="entry" id="p-callcenter">
+        <summary>
+          <span class="entry-year">2024–26</span>
+          <span class="entry-main"><span class="entry-title">Government call-center ASR</span><span class="entry-result">+0.87&nbsp;pp to about 94% on real calls, against a general-speech regression of about 1&nbsp;pp.</span></span>
+        </summary>
+        <dl class="entry-body">
+          <dt>Problem</dt><dd>Adapt the 8&nbsp;kHz model to a government call center with 50 hours of its real calls.</dd>
+          <dt>Approach</dt><dd>Adapted with the real calls plus call-noise augmentation. Before choosing a model, traced the general-domain regression across the base, dialect, and noise test sets.</dd>
+          <dt>Result</dt><dd>+0.87&nbsp;pp, to about 94% domain accuracy.</dd>
+          <dt class="caveat">Caveat</dt><dd>The gain is about the same size as the general-domain cost, roughly 1&nbsp;pp.</dd>
+        </dl>
+      </details>
+      <details class="entry" id="p-vad">
+        <summary>
+          <span class="entry-year">2026</span>
+          <span class="entry-main"><span class="entry-title">One voice activity detector for 8 and 16&nbsp;kHz</span><span class="entry-result">Two models merged into one: 93.30% average accuracy, +3.43&nbsp;pp at 8&nbsp;kHz. Deployed April 2026.</span></span>
+        </summary>
+        <dl class="entry-body">
+          <dt>Problem</dt><dd>Telephone (8&nbsp;kHz) and wideband (16&nbsp;kHz) audio each had their own always-on voice activity model, and merging them opened a performance gap between the two domains.</dd>
+          <dt>Approach</dt><dd>Fifteen rounds of experiments: a hyperparameter search, then boundary labels refined with a speaker-diarization model, a noise-filtering criterion based on how many syllables the recognizer finds in a segment, data and learning-rate changes, and noise augmentation. I chose the model with the smallest gap between the two domains, not the best single score. Benchmarked against Silero VAD, TEN VAD, and FireRed VAD with start-point, end-point, and false-positive error analysis.</dd>
+          <dt>Result</dt><dd>
+            <div class="table-scroll"><table class="data compact">
+              <thead><tr><th scope="col">Test set</th><th scope="col" class="num">Before</th><th scope="col" class="num">Unified</th><th scope="col" class="num">Change</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">16&nbsp;kHz base</th><td class="num">94.46%</td><td class="num">94.72%</td><td class="num">+0.26&nbsp;pp</td></tr>
+                <tr><th scope="row">8&nbsp;kHz base</th><td class="num">91.82%</td><td class="num">95.25%</td><td class="num">+3.43&nbsp;pp</td></tr>
+                <tr><th scope="row">Average</th><td class="num">92.56%</td><td class="num">93.30%</td><td class="num">+0.74&nbsp;pp</td></tr>
+              </tbody>
+            </table></div>
+          </dd>
+          <dt class="caveat">Caveat</dt><dd>The gains are small on 16&nbsp;kHz audio. Error analysis of start points and false positives set the direction for the next version.</dd>
+        </dl>
+      </details>
+    </div>
+  </div>
+
+  <div class="theme">
+    <div class="theme-head">
+      <h3>Synthetic training speech, about 4,180 hours</h3>
+      <p class="theme-years">2024–2026</p>
+    </div>
+    <div class="entries">
+      <details class="entry" id="p-kiosk">
+        <summary>
+          <span class="entry-year">2024–26</span>
+          <span class="entry-main"><span class="entry-title">Bank kiosk</span><span class="entry-result">900 hours of TTS from text alone: +4.07&nbsp;pp to about 98%, weighed against a 1.19&nbsp;pp regression on general speech.</span></span>
+        </summary>
+        <dl class="entry-body">
+          <dt>Problem</dt><dd>The domain data was 13,000 utterances of text, with no audio.</dd>
+          <dt>Approach</dt><dd>Normalized the text with a morphological analyzer and generated 900 hours of TTS speech for adaptation.</dd>
+          <dt>Result</dt><dd>+4.07&nbsp;pp, to about 98% domain accuracy. General speech −1.19&nbsp;pp.</dd>
+        </dl>
+      </details>
+      <details class="entry" id="p-helicopter">
+        <summary>
+          <span class="entry-year">2025</span>
+          <span class="entry-main"><span class="entry-title">Helicopter maintenance commands</span><span class="entry-result">3,000 hours of TTS and no real recordings: 95.25% → 99.03% syllable accuracy.</span></span>
+        </summary>
+        <dl class="entry-body">
+          <dt>Problem</dt><dd>A new domain of maintenance commands and technical terms, with no real recordings and constant engine and airframe noise.</dd>
+          <dt>Approach</dt><dd>Wrote about 25,000 command scripts, generated about 3,000 hours of TTS speech with eight voices and varied pitch and tempo, and mixed in helicopter, engine, and wind noise at 20 dB SNR. Adapted on top of a 10,734-hour base set and averaged the checkpoints from epochs 17 and 18.</dd>
+          <dt>Result</dt><dd>Syllable accuracy 95.25% → 99.03%. On the noisy test set, 94.88% → 98.96%. Word accuracy 47.91% → 77.45%.</dd>
+          <dt class="caveat">Caveat</dt><dd>I traced the remaining word-level gap to differences in word-spacing conventions between the transcripts and the output.</dd>
+        </dl>
+      </details>
+      <details class="entry" id="p-rider">
+        <summary>
+          <span class="entry-year">2024</span>
+          <span class="entry-main"><span class="entry-title">Voice commands for delivery riders</span><span class="entry-result">About 280 hours of TTS: +1.75&nbsp;pp on the domain and +4.79&nbsp;pp overall.</span></span>
+        </summary>
+        <dl class="entry-body">
+          <dt>Problem</dt><dd>Riders accept and sort delivery calls by voice while riding. The base model missed service-specific commands such as accepting the nearest call, and real rider recordings were hard to get.</dd>
+          <dt>Approach</dt><dd>Adapted with about 280 hours of generated speech on top of an 11,958-hour base, and validated on test sets recorded with five devices. After deployment, new prompts were misrecognized, so I generated 882 more utterances (7 prompts, 7 voices, augmented), re-adapted on the new base model, and designed a new test set recorded by 5 speakers on 4 devices.</dd>
+          <dt>Result</dt><dd>+1.75&nbsp;pp across the five device test sets, +14.90&nbsp;pp on the new test sets, and +4.79&nbsp;pp overall. The first model shipped, and the post-deployment fixes went through the same loop.</dd>
+        </dl>
+      </details>
+      <details class="entry" id="p-articulation">
+        <summary>
+          <span class="entry-year">2024</span>
+          <span class="entry-main"><span class="entry-title">Child articulation tests</span><span class="entry-result">About 10 hours of target-domain child speech, over 92% agreement.</span></span>
+        </summary>
+        <dl class="entry-body">
+          <dt>Problem</dt><dd>The target domain had about 10 hours of recordings, 0.8% of the training data. The first model scored 99.60% on general child speech but 67.09% on the target domain.</dd>
+          <dt>Approach</dt><dd>Trained an end-to-end model from scratch with 57 Korean phoneme outputs (KoG2P) on 1,258 hours of child speech, then added augmentation, TTS voices, and generated data in stages over 17 experiments. Rebuilt transcripts after clinical review and analyzed errors phoneme by phoneme.</dd>
+          <dt>Result</dt><dd>Over 92% agreement: 92.25% on recorder audio and 92.82% on phone audio. Training on the domain data alone had reached 73.97%.</dd>
+          <dt class="caveat">Caveat</dt><dd>The final model was scored separately on recorder and phone audio, while the early results pooled them, so the comparison with 67.09% is not exact.</dd>
+        </dl>
+      </details>
+    </div>
+  </div>
+
+  <div class="theme">
+    <div class="theme-head">
+      <h3>Non-native and atypical speakers</h3>
+      <p class="theme-years">2024–2026</p>
+    </div>
+    <div class="entries">
+      <details class="entry" id="p-l2korean">
+        <summary>
+          <span class="entry-year">2026</span>
+          <span class="entry-main"><span class="entry-title">Korean ASR for non-native speakers</span><span class="entry-result">Read speech 88.10% → 98.08%; the phoneme model held the general-speech cost to 0.24&nbsp;pp. Deployed September 2026.</span></span>
+        </summary>
+        <dl class="entry-body">
+          <dt>Problem</dt><dd>Models built for native speech lose accuracy on learners of Korean, whose accents vary with their first language, and a pronunciation-assessment service needed that gap closed.</dd>
+          <dt>Approach</dt><dd>Owned the project alone, from data analysis to deployment. Adapted syllable- and phoneme-level models with 3,300 hours of L2-Korean speech on top of 8,000 to 10,000 hours of base data. Set the manual-inspection criteria by sampling transcripts across CER bands, so that accented but correct speech was not thrown out as a transcription error. Evaluated on a 7.2-hour L2 test set.</dd>
+          <dt>Result</dt><dd>
+            <div class="table-scroll"><table class="data compact">
+              <thead><tr><th scope="col">Test set</th><th scope="col" class="num">Syllable model</th><th scope="col" class="num">Phoneme model</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">L2 read speech</th><td class="num">88.10% → 98.08%</td><td class="num">88.15% → 95.88%</td></tr>
+                <tr><th scope="row">L2 spontaneous speech</th><td class="num">90.62% → 93.19%</td><td class="num">90.02% → 92.14%</td></tr>
+                <tr><th scope="row">General speech</th><td class="num loss">−2.27&nbsp;pp</td><td class="num loss">−0.24&nbsp;pp</td></tr>
+              </tbody>
+            </table></div>
+          </dd>
+          <dt class="caveat">Caveat</dt><dd>Both models gained far less on spontaneous speech than on read speech.</dd>
+        </dl>
+      </details>
+      <details class="entry" id="p-english">
+        <summary>
+          <span class="entry-year">2024–25</span>
+          <span class="entry-main"><span class="entry-title">English pronunciation assessment</span><span class="entry-result">Korean learners 83.17% → 90.42% average phoneme accuracy, native speech held at 98.50%, speaker rankings preserved.</span></span>
+        </summary>
+        <dl class="entry-body">
+          <dt>Problem</dt><dd>The deployed English phoneme recognizer scored 98.50% on native speech but fell to the 68% range on Korean speakers.</dd>
+          <dt>Approach</dt><dd>Added Korean-accented English (training data 1,623 → 2,375 hours) and 2,428 hours of mixed native and non-native speech from SPGISpeech, about 4,800 hours in total. Because the model feeds a scoring tool, I checked separately that the ranking of speakers' pronunciation scores stayed the same.</dd>
+          <dt>Result</dt><dd>Average phoneme accuracy 83.17% → 90.42% (+7.25&nbsp;pp); one learner set rose from 68.00% to 81.00%. Native speech unchanged at 98.50%, and the speaker rankings held.</dd>
+        </dl>
+      </details>
+      <details class="entry" id="p-disorders">
+        <summary>
+          <span class="entry-year">2025</span>
+          <span class="entry-main"><span class="entry-title">Children with speech disorders</span><span class="entry-result">88.90% phoneme accuracy on the assessment word list and 73.42% on unseen words, reported side by side.</span></span>
+        </summary>
+        <dl class="entry-body">
+          <dt>Problem</dt><dd>Speech from children with speech disorders varies widely, and the assessment needs reliable recognition of a fixed word list.</dd>
+          <dt>Approach</dt><dd>Trained a 16&nbsp;kHz Korean phoneme recognizer, set up separate closed-set (assessment words) and open-set (unseen words) evaluation, and designed the training data around the closed set.</dd>
+          <dt>Result</dt><dd>Closed set 88.90%; open set 73.42%.</dd>
+          <dt class="caveat">Caveat</dt><dd>The 15-point gap means the closed-set number says little about words outside the list, so I report both.</dd>
+        </dl>
+      </details>
+    </div>
+  </div>
+
+  <div class="theme">
+    <div class="theme-head">
+      <h3>A new language: Mandarin</h3>
+      <p class="theme-years">2025</p>
+    </div>
+    <div class="entries">
+      <details class="entry" id="p-mandarin">
+        <summary>
+          <span class="entry-year">2025</span>
+          <span class="entry-main"><span class="entry-title">Mandarin ASR from scratch</span><span class="entry-result">93.58% syllable accuracy on AISHELL-1, against an 85% target.</span></span>
+        </summary>
+        <dl class="entry-body">
+          <dt>Problem</dt><dd>Mandarin was a new language for the company, with over a million hours of raw data and different transcription rules in every source.</dd>
+          <dt>Approach</dt><dd>Wrote transcript normalization and inverse text normalization for Chinese numerals, normalized 3,900 hours of transcripts, and used pilot models to set CER thresholds for manual inspection. Compared against Whisper and read the outputs myself. Added 10,000 hours of open-source data, for 14,000 hours in total.</dd>
+          <dt>Result</dt><dd>93.58% syllable accuracy on the AISHELL-1 test set.</dd>
+          <dt class="caveat">Caveat</dt><dd>The 85% target was set for the deployment domain. AISHELL-1 is a public stand-in, so deployment accuracy needs its own matched test.</dd>
+        </dl>
+      </details>
+    </div>
+  </div>
+
+  <div class="theme">
+    <div class="theme-head">
+      <h3>Data quality and tooling</h3>
+      <p class="theme-years">2023–2025</p>
+    </div>
+    <div class="entries">
+      <details class="entry" id="p-cleansing">
+        <summary>
+          <span class="entry-year">2023–24</span>
+          <span class="entry-main"><span class="entry-title">Cleaning training data without losing accents</span><span class="entry-result">Over 3,000 hours cleaned with a two-part filter that removes mistranscriptions but keeps accented speech.</span></span>
+        </summary>
+        <dl class="entry-body">
+          <dt>Problem</dt><dd>Public training corpora contained mistranscribed utterances. A plain CER threshold would also discard valid speech that is simply accented, and decoding all 2,169 hours of dialect data just to screen it was inefficient.</dd>
+          <dt>Approach</dt><dd>My hypothesis was that mistranscribed utterances produce more insertions than substitutions, so the filter required both a CER above 15% and more insertions than substitutions. I listened to every high-error utterance to build a 10-type error taxonomy. For dialect data, I used a filler-word heuristic and set questionable utterances aside instead of deleting them.</dd>
+          <dt>Result</dt><dd>Over 3,000 hours cleaned. Of the errors I listened to, 43.2% were poor pronunciation, 30.4% low volume, and 26.4% noise, extra speech, and other types. Extended in 2024 to five dialects, loanwords, spontaneous speech, and Korean–English code-switching.</dd>
+          <dt class="caveat">Caveat</dt><dd>The filter's effect on downstream CER was not measured in a matched training experiment.</dd>
+        </dl>
+      </details>
+      <details class="entry" id="p-subtitles">
+        <summary>
+          <span class="entry-year">2025</span>
+          <span class="entry-main"><span class="entry-title">Turning subtitled drama into training data</span><span class="entry-result">An SRT and WAV to Hugging Face datasets pipeline that became the team's standard.</span></span>
+        </summary>
+        <dl class="entry-body">
+          <dt>Problem</dt><dd>Subtitles mix the spoken words with text that does not match the audio: tags, credits, song lyrics, and lines in other languages.</dd>
+          <dt>Approach</dt><dd>Parsed SRT and WAV pairs into Hugging Face datasets as an intermediate format, then converted them to the team's training format. Wrote filtering rules for each kind of mismatch and sent the hard cases to manual listening.</dd>
+          <dt>Result</dt><dd>
+            <div class="table-scroll"><table class="data compact">
+              <thead><tr><th scope="col">Subtitle content</th><th scope="col">Why it fails</th><th scope="col">Action</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">A tag such as [Music]</th><td>No speech at all</td><td>Removed by rule</td></tr>
+                <tr><th scope="row">Song lyrics</th><td>Sung, not spoken</td><td>Removed by rule</td></tr>
+                <tr><th scope="row">A line in another language</th><td>Not Korean speech</td><td>Removed by rule</td></tr>
+                <tr><th scope="row">Korean subtitle over foreign-language audio</th><td>Text and audio disagree</td><td>Manual listening</td></tr>
+              </tbody>
+            </table></div>
+            <p>The pipeline is documented with a flow chart and is now the team's standard corpus recipe.</p>
+          </dd>
+        </dl>
+      </details>
+    </div>
+  </div>
+  <p class="expand-all" data-enhanced hidden><button type="button" class="text-button" data-expand="#industry">Open all industry projects</button></p>
+</section>
+
+<section class="section wrap" id="graduate" aria-labelledby="graduate-title">
+  <div class="section-head">
+    <h2 id="graduate-title">Graduate work</h2>
+    <p class="section-sub">Graduate Researcher, Auditory Intelligence Lab, Sogang University, 2021 to 2023, advised by Prof. Ji-Hwan Kim.</p>
+  </div>
+
+  <article class="thesis" aria-labelledby="thesis-title">
+    <h3 id="thesis-title">Master's thesis: grammar WFST fusion for Korean end-to-end ASR</h3>
+    <div class="prose">
+      <p>CTC models predict each output token independently, so they learn no grammar from their transcripts. I compiled token, lexicon, and grammar transducers into one search graph with NeMo and k2, and used it to decode two off-the-shelf Korean CTC models from NVIDIA, Citrinet-1024 and Conformer-L, without retraining them. Korean adds a twist: some real syllables are missing from the models' output vocabularies, so the lexicon maps each one to a similar-sounding token, such as <span lang="ko" class="ko">륄</span> in <span lang="ko" class="ko">브륄레</span> (brûlée) to <span lang="ko" class="ko">릴</span>.</p>
+    </div>
+
+    <figure class="thesis-figure" data-thesis aria-labelledby="thesis-fig-title">
+      <div class="figure-head">
+        <h4 id="thesis-fig-title">Character error rate by test set, before and after decoding with an external language model</h4>
+        <p class="figure-note">Rows are sorted by how predictable each test set was to the grammar's language model (perplexity, lower is more predictable). CER axis is logarithmic; lower is better.</p>
+      </div>
+      <div class="chart-controls" data-enhanced hidden>
+        <div class="segmented" role="group" aria-label="Encoder">
+          <button type="button" data-encoder="citrinet" aria-pressed="true">Citrinet-1024</button>
+          <button type="button" data-encoder="conformer" aria-pressed="false">Conformer-L</button>
+        </div>
+        <div class="segmented" role="group" aria-label="Language model method">
+          <button type="button" data-method="grammar" aria-pressed="true">Word-level grammar (thesis)</button>
+          <button type="button" data-method="lexicon" aria-pressed="false">Lexicon only</button>
+          <button type="button" data-method="shallow" aria-pressed="false">Shallow fusion</button>
+        </div>
+      </div>
+      <ul class="legend" role="list" data-enhanced hidden>
+        <li><span class="dot dot-base" aria-hidden="true"></span>Baseline, no language model</li>
+        <li><span class="dot dot-gain" aria-hidden="true"></span>Selected method, fewer errors</li>
+        <li><span class="dot dot-loss" aria-hidden="true"></span>Selected method, more errors</li>
+      </ul>
+      <div class="dumbbell" data-dumbbell aria-live="polite"></div>
+      <details class="table-view">
+        <summary>Show these numbers as a table</summary>
+        <div class="table-scroll">
+        <table class="data" data-thesis-table>
+          <caption>Character error rate (%) by encoder, test set, and decoding method</caption>
+          <thead><tr><th scope="col">Encoder</th><th scope="col">Test set</th><th scope="col" class="num">LM perplexity</th><th scope="col" class="num">Baseline</th><th scope="col" class="num">Word-level grammar</th><th scope="col" class="num">Lexicon only</th><th scope="col" class="num">Shallow fusion</th></tr></thead>
+          <tbody>
+            <tr data-encoder="citrinet" data-set="Zeroth Korean" data-desc="read news" data-ppl="2.08" data-baseline="4.95" data-grammar="0.66" data-lexicon="2.10" data-shallow="2.01"><td>Citrinet-1024</td><th scope="row">Zeroth Korean (read news)</th><td class="num">2.08</td><td class="num">4.95</td><td class="num">0.66</td><td class="num">2.10</td><td class="num">2.01</td></tr>
+            <tr data-encoder="citrinet" data-set="Korean loanwords" data-desc="colloquial" data-ppl="6.04" data-baseline="7.31" data-grammar="1.28" data-lexicon="5.09" data-shallow="2.40"><td>Citrinet-1024</td><th scope="row">Korean loanwords (colloquial)</th><td class="num">6.04</td><td class="num">7.31</td><td class="num">1.28</td><td class="num">5.09</td><td class="num">2.40</td></tr>
+            <tr data-encoder="citrinet" data-set="KsponSpeech eval-clean" data-desc="conversation" data-ppl="383.08" data-baseline="11.06" data-grammar="16.16" data-lexicon="13.77" data-shallow="8.17"><td>Citrinet-1024</td><th scope="row">KsponSpeech eval-clean (conversation)</th><td class="num">383.08</td><td class="num">11.06</td><td class="num">16.16</td><td class="num">13.77</td><td class="num">8.17</td></tr>
+            <tr data-encoder="citrinet" data-set="KsponSpeech eval-other" data-desc="conversation" data-ppl="2192.64" data-baseline="10.11" data-grammar="15.51" data-lexicon="13.00" data-shallow="8.58"><td>Citrinet-1024</td><th scope="row">KsponSpeech eval-other (conversation)</th><td class="num">2,192.64</td><td class="num">10.11</td><td class="num">15.51</td><td class="num">13.00</td><td class="num">8.58</td></tr>
+            <tr data-encoder="conformer" data-set="Zeroth Korean" data-desc="read news" data-ppl="2.08" data-baseline="5.39" data-grammar="0.78" data-lexicon="2.52" data-shallow="2.84"><td>Conformer-L</td><th scope="row">Zeroth Korean (read news)</th><td class="num">2.08</td><td class="num">5.39</td><td class="num">0.78</td><td class="num">2.52</td><td class="num">2.84</td></tr>
+            <tr data-encoder="conformer" data-set="Korean loanwords" data-desc="colloquial" data-ppl="6.04" data-baseline="9.53" data-grammar="2.42" data-lexicon="7.49" data-shallow="3.82"><td>Conformer-L</td><th scope="row">Korean loanwords (colloquial)</th><td class="num">6.04</td><td class="num">9.53</td><td class="num">2.42</td><td class="num">7.49</td><td class="num">3.82</td></tr>
+            <tr data-encoder="conformer" data-set="KsponSpeech eval-clean" data-desc="conversation" data-ppl="383.08" data-baseline="11.67" data-grammar="17.39" data-lexicon="15.97" data-shallow="8.54"><td>Conformer-L</td><th scope="row">KsponSpeech eval-clean (conversation)</th><td class="num">383.08</td><td class="num">11.67</td><td class="num">17.39</td><td class="num">15.97</td><td class="num">8.54</td></tr>
+            <tr data-encoder="conformer" data-set="KsponSpeech eval-other" data-desc="conversation" data-ppl="2192.64" data-baseline="10.44" data-grammar="16.64" data-lexicon="12.49" data-shallow="8.94"><td>Conformer-L</td><th scope="row">KsponSpeech eval-other (conversation)</th><td class="num">2,192.64</td><td class="num">10.44</td><td class="num">16.64</td><td class="num">12.49</td><td class="num">8.94</td></tr>
+          </tbody>
+        </table>
+        </div>
+      </details>
+    </figure>
+
+    <div class="prose thesis-reading">
+      <p>The pattern follows perplexity. Where the grammar had seen sentences much like the test set, CER fell by 75 to 87%. On conversation, the same grammar forced the wrong words, and CER rose by 46 to 59%. Shallow fusion helped on every test set, though on read speech it gained less than the grammar did. A token-level grammar, built on the models' subword units instead of words, raised CER to 31 to 57% on read news and conversation.</p>
+      <p class="caveat-line"><span class="caveat-label">Caveat</span> The grammar was trained on each corpus's own training text. A perplexity of 2.08 on Zeroth Korean means its test sentences were highly predictable from that text, so 0.66% is an in-domain result, not an open-vocabulary one. The thesis reports the conversational losses as the method's main limitation.</p>
+    </div>
+
+    <div class="examples" data-examples aria-labelledby="examples-title">
+      <h4 id="examples-title">What each decoding stage gets wrong</h4>
+      <p class="figure-note">Two test sentences decoded by Conformer-L. <span class="err-key">Red</span> marks a difference from the reference; <span class="sp-miss-key" aria-hidden="true"></span> a missing space; <span class="sp-extra-key" aria-hidden="true"></span> an extra space.</p>
+      <div class="tabs" role="tablist" aria-label="Example sentence" data-enhanced hidden>
+        <button type="button" role="tab" id="tab-meaning" aria-controls="ex-meaning" aria-selected="true">A wrong word that is still a word</button>
+        <button type="button" role="tab" id="tab-spacing" aria-controls="ex-spacing" aria-selected="false" tabindex="-1">Spacing and a loanword</button>
+      </div>
+      <div class="example" id="ex-meaning" role="tabpanel" aria-labelledby="tab-meaning">
+        <p class="example-gloss">“Expecting the hearing to run long, Judge Kang called a one-hour recess from 1:06 p.m.”</p>
+        <dl class="decodes">
+          <dt>Reference</dt>
+          <dd><span lang="ko" class="ko">강 판사는 심문 시간이 길어질 것으로 보고 오후 한 시 육 분부터 한 시간 동안 휴정을 선언하기도 했다</span></dd>
+          <dt>End-to-end</dt>
+          <dd><span lang="ko" class="ko">강 판사는 <mark class="err">상</mark>문 시간이 길어질 것으로 보고 오후 한<span class="sp-miss" title="missing space"></span>시 육 분부터 한 시간 동안 휴정을 선언하기도 했다</span><span class="note">심문 (hearing) came out as 상문, and 한 시 (one o'clock) lost its space.</span></dd>
+          <dt>+ Lexicon</dt>
+          <dd><span lang="ko" class="ko">강 판사는 <mark class="err">방</mark>문 시간이 길어질 것으로 보고 오후 한 시 육 분부터 한 시간 동안 휴정을 선언하기도 했다</span><span class="note">The spacing is fixed, but 방문 (visit) is a real word with the wrong meaning.</span></dd>
+          <dt>+ Lexicon + grammar</dt>
+          <dd><span lang="ko" class="ko">강 판사는 심문 시간이 길어질 것으로 보고 오후 한 시 육 분부터 한 시간 동안 휴정을 선언하기도 했다</span><span class="note ok">Matches the reference: 심문 (hearing).</span></dd>
+        </dl>
+      </div>
+      <div class="example" id="ex-spacing" role="tabpanel" aria-labelledby="tab-spacing">
+        <p class="example-gloss">“If the all-round xiaokang (moderately prosperous) society, now only five years away, turns away people with mental illness, the most neglected and without any medical benefits, can it truly be called a xiaokang society?”</p>
+        <dl class="decodes">
+          <dt>Reference</dt>
+          <dd><span lang="ko" class="ko">앞으로 오 년밖에 남지 않은 전면적 샤오캉 사회가 가장 소외받고 의료혜택을 전혀 보지 못하는 정신질환자들을 외면한다면 과연 진정한 샤오캉 사회라 할 수 있을까</span></dd>
+          <dt>End-to-end</dt>
+          <dd><span lang="ko" class="ko">앞으로 오 년밖에 남지 않은 전면적<span class="sp-miss" title="missing space"></span>샤오캉 사회가 가장 소외받고 의료<span class="sp-extra" title="extra space"></span>혜택을 전혀 보지 못하는 정신질환자들을 외면한다면 과연 진정한 샤<mark class="err">혹</mark>캉 사회라 할 수 있을까</span><span class="note">Two spacing errors, and the loanword 샤오캉 (xiaokang) misspelled.</span></dd>
+          <dt>+ Lexicon</dt>
+          <dd><span lang="ko" class="ko">앞으로 오 년밖에 남지 않은 전면적 샤오캉 사회가 가장 소외받고 의료<span class="sp-extra" title="extra space"></span>혜택을 전혀 보지 못하는 정신질환자들을 외면한다면 과연 진정한 샤오캉 사회라 할 수 있을까</span><span class="note">The loanword and one space are fixed; the extra space in 의료혜택 (medical benefits) remains.</span></dd>
+          <dt>+ Lexicon + grammar</dt>
+          <dd><span lang="ko" class="ko">앞으로 오 년밖에 남지 않은 전면적 샤오캉 사회가 가장 소외받고 의료혜택을 전혀 보지 못하는 정신질환자들을 외면한다면 과연 진정한 샤오캉 사회라 할 수 있을까</span><span class="note ok">Matches the reference.</span></dd>
+        </dl>
+      </div>
+    </div>
+    <p class="refs">Papers: <a href="#pub-ij3">IJ3</a>, <a href="#pub-ic1">IC1</a>.</p>
+  </article>
+
+  <div class="theme">
+    <div class="theme-head">
+      <h3>Other graduate research</h3>
+      <p class="theme-years">2021–2023</p>
+    </div>
+    <div class="entries">
+      <details class="entry" id="g-dysarthria">
+        <summary>
+          <span class="entry-year">2022–23</span>
+          <span class="entry-main"><span class="entry-title">Measuring dysarthria severity after stroke</span><span class="entry-result">Clinical measures computed from recognizer output tracked human ratings with correlations of 0.94 to 0.97.</span></span>
+        </summary>
+        <dl class="entry-body">
+          <dt>Problem</dt><dd>Dysarthria assessment relies on therapists listening and counting. Automating it first requires showing that machine measurements agree with the clinical ones. Part of a project on conversation-based, multimodal explainable AI.</dd>
+          <dt>Approach</dt><dd>Separated patient speech from therapist–patient sessions, built the database, and did the human annotation myself. Computed alternating and sequential motion rates (AMR, SMR) from repetitions of <span lang="ko" class="ko">퍼 터 커</span> <span class="ipa">[pʰʌ tʰʌ kʰʌ]</span> with a phoneme Conformer (trained on 2,600 hours of elderly conversational speech, 2.20% phoneme error rate), and the percentage of correct consonants (PCC) and syllables per second (SPS) from Whisper Large transcripts of word and paragraph reading.</dd>
+          <dt>Result</dt><dd>
+            <div class="table-scroll"><table class="data compact">
+              <thead><tr><th scope="col">Clinical measure</th><th scope="col">Recognizer</th><th scope="col" class="num">Correlation with human rating</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">AMR</th><td>Phoneme Conformer</td><td class="num">0.94</td></tr>
+                <tr><th scope="row">SMR</th><td>Phoneme Conformer</td><td class="num">0.95</td></tr>
+                <tr><th scope="row">PCC</th><td>Whisper Large</td><td class="num">0.94</td></tr>
+                <tr><th scope="row">SPS</th><td>Whisper Large</td><td class="num">0.97</td></tr>
+              </tbody>
+            </table></div>
+            <p>A severity-stage classifier on these features reached 74.85% accuracy, against 60.73% for a random forest and 53.37% for XGBoost.</p>
+          </dd>
+          <dt class="caveat">Caveat</dt><dd>Raw error rates (PER, CER) did not track severity well; the clinical measures did. The data skewed toward men with mild impairment, which I flagged for the project's second year, along with adding sex, age, and intelligibility as features.</dd>
+          <dt>Papers</dt><dd><a href="#pub-dc4">DC4</a>, <a href="#pub-dc6">DC6</a></dd>
+        </dl>
+      </details>
+      <details class="entry" id="g-uav">
+        <summary>
+          <span class="entry-year">2021–22</span>
+          <span class="entry-main"><span class="entry-title">Voice commands for unmanned vehicles</span><span class="entry-result">A WFST recognizer on the controller: 2.38% WER on a 36-word command grammar.</span></span>
+        </summary>
+        <dl class="entry-body">
+          <dt>Problem</dt><dd>Operators of unmanned aerial, surface, and ground vehicles should be able to give commands by voice, and a misrecognized command is a safety problem.</dd>
+          <dt>Approach</dt><dd>Composed a LibriSpeech-pretrained DNN-HMM acoustic model, a 4-gram language model covering every sentence of the command grammar (vehicle, action, speed, distance or heading, then “execute”), and a G2P lexicon into one search graph.</dd>
+          <dt>Result</dt><dd>2.38% WER on command-grammar utterances, presented as first author at KSAS 2021. I also co-authored the Whisper-based follow-up.</dd>
+          <dt class="caveat">Caveat</dt><dd>Measured on in-grammar speech only. Rejecting out-of-grammar speech and response time need their own tests.</dd>
+          <dt>Papers</dt><dd><a href="#pub-dc3">DC3</a>, <a href="#pub-dc5">DC5</a></dd>
+        </dl>
+      </details>
+      <details class="entry" id="g-aed">
+        <summary>
+          <span class="entry-year">2021</span>
+          <span class="entry-main"><span class="entry-title">Audio event detection on Android</span><span class="entry-result">A real-time MobileNetV2-based model for a project on device heterogeneity.</span></span>
+        </summary>
+        <dl class="entry-body">
+          <dt>Approach</dt><dd>Trained a MobileNetV2-based audio event detection model to run in real time in an Android application, as part of a project on mitigating differences between recording devices.</dd>
+        </dl>
+      </details>
+      <details class="entry" id="g-competitions">
+        <summary>
+          <span class="entry-year">2021–22</span>
+          <span class="entry-main"><span class="entry-title">Competitions</span><span class="entry-result">Top Excellence Award for in-vehicle speech recognition, Korean AI Competition 2022.</span></span>
+        </summary>
+        <dl class="entry-body">
+          <dt>2022</dt><dd><strong>Korean AI Competition, Track 2 (NIA): Top Excellence Award.</strong> An in-vehicle conversation and command recognition task posed by Hyundai Motor Company. Trained a Conformer-CTC model with 1,024 BPE tokens on the competition platform, with speed and shift perturbation and 6-gram language-model shallow fusion: 98% accuracy.</dd>
+          <dt>2021</dt><dd><strong>AI Data Hackathon (KT alpha).</strong> Korean speech containing numbers, whose readings change with context. A team entry with a grapheme-based end-to-end model: 81.21% accuracy.</dd>
+        </dl>
+      </details>
+    </div>
+  </div>
+  <p class="expand-all" data-enhanced hidden><button type="button" class="text-button" data-expand="#graduate">Open all graduate projects</button></p>
+</section>
+
+<section class="section wrap" id="publications" aria-labelledby="publications-title">
+  <div class="section-head">
+    <h2 id="publications-title">Publications</h2>
+    <p class="section-sub">Labels follow my CV: IJ and IC are international journals and conferences, DJ and DC domestic (Korean) ones, whose titles are translated from Korean. <a href="https://scholar.google.com/citations?user=f7L3rT4AAAAJ&amp;hl=en">Google Scholar profile</a></p>
+  </div>
+  <div class="pub-filters" data-enhanced hidden>
+    <div class="segmented" role="group" aria-label="Filter publications">
+      <button type="button" data-pubfilter="all" aria-pressed="true">All</button>
+      <button type="button" data-pubfilter="first" aria-pressed="false">First author</button>
+      <button type="button" data-pubfilter="intl" aria-pressed="false">International</button>
+      <button type="button" data-pubfilter="domestic" aria-pressed="false">Domestic</button>
+    </div>
+    <p class="pub-count" data-pubcount role="status" aria-live="polite"></p>
+  </div>
+  <ol class="pubs" role="list">
+    <li class="pub" id="pub-ij3" data-tags="intl journal">
+      <span class="pub-id">IJ3</span>
+      <div class="pub-body">
+        <p class="pub-title">Integration of WFST Language Model in Pre-trained Korean E2E ASR Model</p>
+        <p class="pub-authors">Junseok Oh, <b>Eunsoo Cho</b>, and Ji-Hwan Kim</p>
+        <p class="pub-venue"><i>KSII Transactions on Internet and Information Systems</i>, vol. 18, no. 6, pp. 1692–1705, 2024</p>
+        <div class="pub-actions"><a href="https://doi.org/10.3837/tiis.2024.06.015">DOI</a><button type="button" class="text-button" data-copy="bib-ij3" hidden>Copy BibTeX</button><span class="copy-status" role="status" aria-live="polite"></span><details class="bib"><summary>Show BibTeX</summary><pre id="bib-ij3" tabindex="0"><code>@article{oh2024wfst,
+  author  = {Oh, Junseok and Cho, Eunsoo and Kim, Ji-Hwan},
+  title   = {{Integration of WFST Language Model in Pre-trained Korean E2E ASR Model}},
+  journal = {KSII Transactions on Internet and Information Systems},
+  volume  = {18},
+  number  = {6},
+  pages   = {1692--1705},
+  year    = {2024},
+  doi     = {10.3837/tiis.2024.06.015}
+}</code></pre></details></div>
+      </div>
+    </li>
+    <li class="pub" id="pub-ic1" data-tags="intl conference first">
+      <span class="pub-id">IC1</span>
+      <div class="pub-body">
+        <p class="pub-title">The Use of Grammar Transducer in Korean End-to-end Automatic Speech Recognition Models</p>
+        <p class="pub-authors"><b>Eunsoo Cho</b>, Hosung Park, Hayoung Kim, and Ji-Hwan Kim</p>
+        <p class="pub-venue"><i>Proc. APIC-IST</i>, pp. 193–195, 2023</p>
+        <div class="pub-actions"><a href="https://apicist.org/media?key=site%2Fapicist2023%2FProceedings_of_APIC-IST_2023.pdf">Proceedings PDF</a><button type="button" class="text-button" data-copy="bib-ic1" hidden>Copy BibTeX</button><span class="copy-status" role="status" aria-live="polite"></span><details class="bib"><summary>Show BibTeX</summary><pre id="bib-ic1" tabindex="0"><code>@inproceedings{cho2023grammar,
+  author    = {Cho, Eunsoo and Park, Hosung and Kim, Hayoung and Kim, Ji-Hwan},
+  title     = {{The Use of Grammar Transducer in Korean End-to-end Automatic Speech Recognition Models}},
+  booktitle = {Proceedings of APIC-IST},
+  pages     = {193--195},
+  year      = {2023}
+}</code></pre></details></div>
+      </div>
+    </li>
+    <li class="pub" id="pub-ic2" data-tags="intl conference">
+      <span class="pub-id">IC2</span>
+      <div class="pub-body">
+        <p class="pub-title">Improving Conformer-CTC based Korean ASR Performance with Data Augmentation and Language Model</p>
+        <p class="pub-authors">Yoonseo Chung, Hosung Park, <b>Eunsoo Cho</b>, and Ji-Hwan Kim</p>
+        <p class="pub-venue"><i>Proc. APIC-IST</i>, 2023</p>
+        <div class="pub-actions"><button type="button" class="text-button" data-copy="bib-ic2" hidden>Copy BibTeX</button><span class="copy-status" role="status" aria-live="polite"></span><details class="bib"><summary>Show BibTeX</summary><pre id="bib-ic2" tabindex="0"><code>@inproceedings{chung2023conformer,
+  author    = {Chung, Yoonseo and Park, Hosung and Cho, Eunsoo and Kim, Ji-Hwan},
+  title     = {{Improving Conformer-CTC based Korean ASR Performance with Data Augmentation and Language Model}},
+  booktitle = {Proceedings of APIC-IST},
+  year      = {2023}
+}</code></pre></details></div>
+      </div>
+    </li>
+    <li class="pub" id="pub-dc7" data-tags="domestic conference first">
+      <span class="pub-id">DC7</span>
+      <div class="pub-body">
+        <p class="pub-title">Error Analysis of NVIDIA's Pretrained Korean Speech Recognition Model</p>
+        <p class="pub-authors"><b>Eunsoo Cho</b>, Hosung Park, Hayoung Kim, and Ji-Hwan Kim</p>
+        <p class="pub-venue"><i>Proc. Korean Society for Internet Information (KSII) Spring Conference</i>, 2023</p>
+        <div class="pub-actions"><button type="button" class="text-button" data-copy="bib-dc7" hidden>Copy BibTeX</button><span class="copy-status" role="status" aria-live="polite"></span><details class="bib"><summary>Show BibTeX</summary><pre id="bib-dc7" tabindex="0"><code>@inproceedings{cho2023error,
+  author    = {Cho, Eunsoo and Park, Hosung and Kim, Hayoung and Kim, Ji-Hwan},
+  title     = {{Error Analysis of NVIDIA's Pretrained Korean Speech Recognition Model}},
+  booktitle = {Proceedings of the Korean Society for Internet Information (KSII) Spring Conference},
+  year      = {2023},
+  note      = {In Korean; title translated}
+}</code></pre></details></div>
+      </div>
+    </li>
+    <li class="pub" id="pub-dc6" data-tags="domestic conference first">
+      <span class="pub-id">DC6</span>
+      <div class="pub-body">
+        <p class="pub-title">Measuring Dysarthria Severity Using End-to-End Speech Recognition</p>
+        <p class="pub-authors"><b>Eunsoo Cho</b> and Ji-Hwan Kim</p>
+        <p class="pub-venue"><i>Proc. Society for Computational Design and Engineering Winter Conference</i>, 2023</p>
+        <div class="pub-actions"><button type="button" class="text-button" data-copy="bib-dc6" hidden>Copy BibTeX</button><span class="copy-status" role="status" aria-live="polite"></span><details class="bib"><summary>Show BibTeX</summary><pre id="bib-dc6" tabindex="0"><code>@inproceedings{cho2023dysarthria,
+  author    = {Cho, Eunsoo and Kim, Ji-Hwan},
+  title     = {{Measuring Dysarthria Severity Using End-to-End Speech Recognition}},
+  booktitle = {Proceedings of the Society for Computational Design and Engineering Winter Conference},
+  year      = {2023},
+  note      = {In Korean; title translated}
+}</code></pre></details></div>
+      </div>
+    </li>
+    <li class="pub" id="pub-ij2" data-tags="intl journal">
+      <span class="pub-id">IJ2</span>
+      <div class="pub-body">
+        <p class="pub-title">WFST-based Integration of End-to-End Approach and External Knowledge in Speech Recognition Decoding Network</p>
+        <p class="pub-authors">Hosung Park, <b>Eunsoo Cho</b>, Junseok Oh, and Ji-Hwan Kim</p>
+        <p class="pub-venue"><i>Intelligent Automation &amp; Soft Computing</i>, 2022 (accepted)</p>
+        <div class="pub-actions"><button type="button" class="text-button" data-copy="bib-ij2" hidden>Copy BibTeX</button><span class="copy-status" role="status" aria-live="polite"></span><details class="bib"><summary>Show BibTeX</summary><pre id="bib-ij2" tabindex="0"><code>@article{park2022wfst,
+  author  = {Park, Hosung and Cho, Eunsoo and Oh, Junseok and Kim, Ji-Hwan},
+  title   = {{WFST-based Integration of End-to-End Approach and External Knowledge in Speech Recognition Decoding Network}},
+  journal = {Intelligent Automation \&amp; Soft Computing},
+  year    = {2022},
+  note    = {Accepted}
+}</code></pre></details></div>
+      </div>
+    </li>
+    <li class="pub" id="pub-ij1" data-tags="intl journal">
+      <span class="pub-id">IJ1</span>
+      <div class="pub-body">
+        <p class="pub-title">TP-MobNet: A Two-pass Mobile Network for Low-complexity Classification of Acoustic Scene</p>
+        <p class="pub-authors">Soonshin Seo, Junseok Oh, <b>Eunsoo Cho</b>, Hosung Park, Gyujin Kim, and Ji-Hwan Kim</p>
+        <p class="pub-venue"><i>Computers, Materials &amp; Continua</i>, vol. 73, no. 2, pp. 3291–3303, 2022</p>
+        <div class="pub-actions"><a href="https://doi.org/10.32604/cmc.2022.026259">DOI</a><button type="button" class="text-button" data-copy="bib-ij1" hidden>Copy BibTeX</button><span class="copy-status" role="status" aria-live="polite"></span><details class="bib"><summary>Show BibTeX</summary><pre id="bib-ij1" tabindex="0"><code>@article{seo2022tpmobnet,
+  author  = {Seo, Soonshin and Oh, Junseok and Cho, Eunsoo and Park, Hosung and Kim, Gyujin and Kim, Ji-Hwan},
+  title   = {{TP-MobNet: A Two-pass Mobile Network for Low-complexity Classification of Acoustic Scene}},
+  journal = {Computers, Materials \&amp; Continua},
+  volume  = {73},
+  number  = {2},
+  pages   = {3291--3303},
+  year    = {2022},
+  doi     = {10.32604/cmc.2022.026259}
+}</code></pre></details></div>
+      </div>
+    </li>
+    <li class="pub" id="pub-dc5" data-tags="domestic conference">
+      <span class="pub-id">DC5</span>
+      <div class="pub-body">
+        <p class="pub-title">A Speech Recognizer for Unmanned Mobility Control Using Whisper</p>
+        <p class="pub-authors">Yoonseo Chung, <b>Eunsoo Cho</b>, and Ji-Hwan Kim</p>
+        <p class="pub-venue"><i>Proc. KSII Fall Conference</i>, 2022</p>
+        <div class="pub-actions"><button type="button" class="text-button" data-copy="bib-dc5" hidden>Copy BibTeX</button><span class="copy-status" role="status" aria-live="polite"></span><details class="bib"><summary>Show BibTeX</summary><pre id="bib-dc5" tabindex="0"><code>@inproceedings{chung2022whisper,
+  author    = {Chung, Yoonseo and Cho, Eunsoo and Kim, Ji-Hwan},
+  title     = {{A Speech Recognizer for Unmanned Mobility Control Using Whisper}},
+  booktitle = {Proceedings of the KSII Fall Conference},
+  year      = {2022},
+  note      = {In Korean; title translated}
+}</code></pre></details></div>
+      </div>
+    </li>
+    <li class="pub" id="pub-dc4" data-tags="domestic conference first">
+      <span class="pub-id">DC4</span>
+      <div class="pub-body">
+        <p class="pub-title">Correlation Analysis between Frame-level Log Probabilities of a Conformer-based Speech Recognizer and Dysarthria Severity in Stroke Patients</p>
+        <p class="pub-authors"><b>Eunsoo Cho</b>, Junseok Oh, and Ji-Hwan Kim</p>
+        <p class="pub-venue"><i>Proc. KSII Fall Conference</i>, vol. 23, no. 2, pp. 133–134, 2022</p>
+        <div class="pub-actions"><button type="button" class="text-button" data-copy="bib-dc4" hidden>Copy BibTeX</button><span class="copy-status" role="status" aria-live="polite"></span><details class="bib"><summary>Show BibTeX</summary><pre id="bib-dc4" tabindex="0"><code>@inproceedings{cho2022dysarthria,
+  author    = {Cho, Eunsoo and Oh, Junseok and Kim, Ji-Hwan},
+  title     = {{Correlation Analysis between Frame-level Log Probabilities of a Conformer-based Speech Recognizer and Dysarthria Severity in Stroke Patients}},
+  booktitle = {Proceedings of the KSII Fall Conference},
+  volume    = {23},
+  number    = {2},
+  pages     = {133--134},
+  year      = {2022},
+  note      = {In Korean; title translated}
+}</code></pre></details></div>
+      </div>
+    </li>
+    <li class="pub" id="pub-dj1" data-tags="domestic journal">
+      <span class="pub-id">DJ1</span>
+      <div class="pub-body">
+        <p class="pub-title">Conformer with Lexicon Transducer for Korean End-to-End Speech Recognition</p>
+        <p class="pub-authors">Hyunsoo Son, Hosung Park, Gyujin Kim, <b>Eunsoo Cho</b>, and Ji-Hwan Kim</p>
+        <p class="pub-venue"><i>The Journal of the Acoustical Society of Korea</i>, vol. 40, no. 5, pp. 530–536, 2021</p>
+        <div class="pub-actions"><a href="https://doi.org/10.7776/ASK.2021.40.5.530">DOI</a><button type="button" class="text-button" data-copy="bib-dj1" hidden>Copy BibTeX</button><span class="copy-status" role="status" aria-live="polite"></span><details class="bib"><summary>Show BibTeX</summary><pre id="bib-dj1" tabindex="0"><code>@article{son2021conformer,
+  author  = {Son, Hyunsoo and Park, Hosung and Kim, Gyujin and Cho, Eunsoo and Kim, Ji-Hwan},
+  title   = {{Conformer with Lexicon Transducer for Korean End-to-End Speech Recognition}},
+  journal = {The Journal of the Acoustical Society of Korea},
+  volume  = {40},
+  number  = {5},
+  pages   = {530--536},
+  year    = {2021},
+  doi     = {10.7776/ASK.2021.40.5.530},
+  note    = {In Korean; title translated}
+}</code></pre></details></div>
+      </div>
+    </li>
+    <li class="pub" id="pub-dc3" data-tags="domestic conference first">
+      <span class="pub-id">DC3</span>
+      <div class="pub-body">
+        <p class="pub-title">Weighted Finite State Transducer-Based Speech Recognition for Unmanned Mobility Control</p>
+        <p class="pub-authors"><b>Eunsoo Cho</b>, Hosung Park, Gyujin Kim, and Ji-Hwan Kim</p>
+        <p class="pub-venue"><i>Proc. Korean Society for Aeronautical and Space Sciences (KSAS) Fall Conference</i>, 2021</p>
+        <div class="pub-actions"><button type="button" class="text-button" data-copy="bib-dc3" hidden>Copy BibTeX</button><span class="copy-status" role="status" aria-live="polite"></span><details class="bib"><summary>Show BibTeX</summary><pre id="bib-dc3" tabindex="0"><code>@inproceedings{cho2021wfst,
+  author    = {Cho, Eunsoo and Park, Hosung and Kim, Gyujin and Kim, Ji-Hwan},
+  title     = {{Weighted Finite State Transducer-Based Speech Recognition for Unmanned Mobility Control}},
+  booktitle = {Proceedings of the Korean Society for Aeronautical and Space Sciences (KSAS) Fall Conference},
+  year      = {2021},
+  note      = {In Korean; title translated}
+}</code></pre></details></div>
+      </div>
+    </li>
+    <li class="pub" id="pub-dc2" data-tags="domestic conference">
+      <span class="pub-id">DC2</span>
+      <div class="pub-body">
+        <p class="pub-title">A Korean Speech Recognition System Using Lookahead Composition-based Weighted Finite State Transducers</p>
+        <p class="pub-authors">Gyujin Kim, Hyunsoo Son, Hosung Park, Soonshin Seo, <b>Eunsoo Cho</b>, Donghyun Lee, and Ji-Hwan Kim</p>
+        <p class="pub-venue"><i>Proc. Korea Computer Congress (KCC)</i>, 2021</p>
+        <div class="pub-actions"><button type="button" class="text-button" data-copy="bib-dc2" hidden>Copy BibTeX</button><span class="copy-status" role="status" aria-live="polite"></span><details class="bib"><summary>Show BibTeX</summary><pre id="bib-dc2" tabindex="0"><code>@inproceedings{kim2021lookahead,
+  author    = {Kim, Gyujin and Son, Hyunsoo and Park, Hosung and Seo, Soonshin and Cho, Eunsoo and Lee, Donghyun and Kim, Ji-Hwan},
+  title     = {{A Korean Speech Recognition System Using Lookahead Composition-based Weighted Finite State Transducers}},
+  booktitle = {Proceedings of the Korea Computer Congress (KCC)},
+  year      = {2021},
+  note      = {In Korean; title translated}
+}</code></pre></details></div>
+      </div>
+    </li>
+    <li class="pub" id="pub-dc1" data-tags="domestic conference">
+      <span class="pub-id">DC1</span>
+      <div class="pub-body">
+        <p class="pub-title">Korean End-to-End Speech Recognition Based on Convolution-Augmented Transformer</p>
+        <p class="pub-authors">Hyunsoo Son, Hosung Park, Gyujin Kim, Donghyun Lee, Soonshin Seo, <b>Eunsoo Cho</b>, and Ji-Hwan Kim</p>
+        <p class="pub-venue"><i>Proc. Korea Computer Congress (KCC)</i>, 2021</p>
+        <div class="pub-actions"><button type="button" class="text-button" data-copy="bib-dc1" hidden>Copy BibTeX</button><span class="copy-status" role="status" aria-live="polite"></span><details class="bib"><summary>Show BibTeX</summary><pre id="bib-dc1" tabindex="0"><code>@inproceedings{son2021conformerkcc,
+  author    = {Son, Hyunsoo and Park, Hosung and Kim, Gyujin and Lee, Donghyun and Seo, Soonshin and Cho, Eunsoo and Kim, Ji-Hwan},
+  title     = {{Korean End-to-End Speech Recognition Based on Convolution-Augmented Transformer}},
+  booktitle = {Proceedings of the Korea Computer Congress (KCC)},
+  year      = {2021},
+  note      = {In Korean; title translated}
+}</code></pre></details></div>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<section class="section wrap" id="background" aria-labelledby="background-title">
+  <h2 id="background-title">Background</h2>
+  <div class="background-grid">
+    <div>
+      <h3 class="h-sub">Education and research positions</h3>
+      <ol class="timeline" role="list">
+        <li><span class="tl-years">2023–present</span><div><p class="tl-title">AI Researcher, Speech Recognition Lab, Selvas AI</p><p class="tl-note">Seoul, Korea.</p></div></li>
+        <li><span class="tl-years">2021–2023</span><div><p class="tl-title">M.S. in Applied Data Science and Engineering, Sogang University</p><p class="tl-note">Auditory Intelligence Lab, advised by Prof. Ji-Hwan Kim. Thesis: Grammar WFST Fusion for Korean End-to-End Speech Recognition Models. Graduate researcher throughout.</p></div></li>
+        <li><span class="tl-years">2017</span><div><p class="tl-title">Visiting student, Tsinghua University</p><p class="tl-note">Beijing, March to August, under the Sogang–Tsinghua academic agreement.</p></div></li>
+        <li><span class="tl-years">2016–2021</span><div><p class="tl-title">Bachelor's degree, Sogang University</p><p class="tl-note">Major in Chinese Culture; double major in Art and Technology; interdisciplinary major in Convergence Software (Humanities Contents).</p></div></li>
+      </ol>
+    </div>
+    <div>
+      <h3 class="h-sub">Teaching</h3>
+      <ul class="plain-list" role="list">
+        <li><span class="pl-year">2021–22</span>Graduate Teaching Assistant, Applied Data Science and Engineering, Sogang University</li>
+        <li><span class="pl-year">2021</span>WFST lab, Samsung AI Academy Advanced Course in Speech and Language Theory</li>
+        <li><span class="pl-year">2021</span>Kaldi toolkit, LG Uplus AI Speech Recognition PBL Course (teaching assistant)</li>
+      </ul>
+      <h3 class="h-sub">Awards and scholarships</h3>
+      <ul class="plain-list" role="list">
+        <li><span class="pl-year">2022</span>Top Excellence Award, Korean AI Competition, Track 2 (NIA)</li>
+        <li><span class="pl-year">2021</span>AI Data Hackathon, KT alpha (team entry, 81.21% accuracy)</li>
+        <li><span class="pl-year">2021–22</span>BK (Brain Korea) Government-Sponsored Scholarship, Sogang University</li>
+        <li><span class="pl-year">2021</span>Academic Scholarship (two semesters), Sogang University Graduate School</li>
+        <li><span class="pl-year">2017</span>Tsinghua University Visiting Student Scholarship, Sogang University</li>
+        <li><span class="pl-year">2016</span>High Honors Scholarship (freshmen), Sogang University</li>
+      </ul>
+      <h3 class="h-sub">Tools</h3>
+      <dl class="tools">
+        <dt>Speech and ML</dt><dd>Python, PyTorch, TensorFlow, Hugging Face, Kaldi, ESPnet, NVIDIA NeMo, fairseq, k2</dd>
+        <dt>Infrastructure</dt><dd>Linux GPU servers, Docker (including rootless and air-gapped installs), CI with Gitea Actions</dd>
+      </dl>
+      <h3 class="h-sub">Languages</h3>
+      <dl class="tools">
+        <dt>Korean</dt><dd>Native</dd>
+        <dt>English</dt><dd>Fluent. TOEFL iBT (2026) 6.0 of 6, comparable to 118 of 120; IELTS (2025) 8.0</dd>
+        <dt>Mandarin Chinese</dt><dd>Conversational</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer" id="contact">
+  <div class="wrap footer-inner">
+    <div>
+      <p class="footer-name">Eunsoo Cho <span class="ko-serif" lang="ko">조은수</span></p>
+      <p class="footer-note">Seoul, Korea. Applying to PhD programs for Fall 2027.</p>
+    </div>
+    <ul class="footer-links" role="list">
+      <li><a href="mailto:christiefan03@gmail.com">christiefan03@gmail.com</a></li>
+      <li><a href="assets/Eunsoo_Cho_CV.pdf">CV (PDF)</a></li>
+      <li><a href="https://scholar.google.com/citations?user=f7L3rT4AAAAJ&amp;hl=en">Google Scholar</a></li>
+    </ul>
+    <p class="footer-fine">Updated November 2026. No cookies, trackers, or analytics. The speech on this page is synthesized in your browser.</p>
+  </div>
+</footer>
+</body>
+</html>
